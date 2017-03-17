@@ -2,50 +2,57 @@
 using namespace std;
 
 /**
- * Binary search function for integer
+ * Bubble short
  *
  * @param int[] heystack;  //must be sorted data
- * @param int niddle;
  *
- * @return int location; //negative for not found
+ * @return int* heystack;  //negative for not found
  */
-
-int binary_search(int heystack[], int niddle)
+int* bubble_sort(int numbers[])
 {
+    int n = 100;
+    int temp,i,j;
 
-    int min = 0;
-    int max = 10000;
-    int mid = -1;
-
-    while( min <= max )
+    for(i = 0; i < n - 1; i++ )
     {
-        mid = (max + min) / 2;
-
-        if( heystack[ mid ] == niddle )
-            return mid;
-        else if( heystack[mid] < niddle )
-            min = mid + 1;
-        else
-            max = mid - 1;
+        for(j = 0; j < n - i - 1; j++)
+        {
+            if ( numbers[ j ] > numbers[ j + 1 ] )
+            {
+                //swaping data
+                temp            = numbers[ j + 1 ];
+                numbers[ j + 1] = numbers[ j ];
+                numbers[ j ]    = temp;
+            }
+        }
     }
 
-    return -1;
+    return numbers;
 }
-
 
 
 
 int main() {
 
-   int x[10000] = {10,20,30,40,50,60,70,80,90,100};
+   int x[100] = {10,20,30,40,50,60,70,80,90,100};
+   int *shorted_data = bubble_sort(x);
 
-   for(int i=0;i<10000; i++)
+   for(int i=0;i<100; i++)
    {
-       x[i] = 19000 + i;
+
+       x[i] = (i % 3 == 0) ? 19000 + i : i * 3 + 1;
    }
 
-   int result = binary_search(x, 19312 );
+   shorted_data = bubble_sort(x);
 
+
+   int result = binary_search( shorted_data, 19072 );
+
+
+ for(int y = 0; y<100; y++)
+ {
+     cout << shorted_data[y] << endl;
+ }
 
    if( result >= 0 )
     {

@@ -13,9 +13,9 @@ int* bubble_sort(int numbers[])
     int n = 100;
     int temp,i,j;
 
-    for(i = 0; i < n - 1; i++ )
+    for(i = 0; i < n - 1 ; i++ )
     {
-        for(j = 0; j < n - i - 1; j++)
+        for(j = 0; j < n - i; j++)
         {
             if ( numbers[ j ] > numbers[ j + 1 ] )
             {

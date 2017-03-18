@@ -25,9 +25,9 @@ int* selection_sort(int numbers[])
             }
         }
 
-        temp = numbers[ i ];
-        numbers[ i ] = numbers[ min ];
-        numbers[ min ] = temp;
+        temp            = numbers[ i ];
+        numbers[ i ]    = numbers[ min ];
+        numbers[ min ]  = temp;
 
     }
 

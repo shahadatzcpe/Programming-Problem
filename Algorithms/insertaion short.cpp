@@ -18,13 +18,12 @@ int* insertaion_sort(int heystack[])
     {
         temp = heystack[i];
 
-        for(j = i ; j > 0 && heystack[ j - 1 ] > temp ; j-- )
+        for(j = i ; heystack[ j - 1 ] > temp && j > 0; j-- )
         {
             heystack[j] = heystack[ j - 1 ];
         }
 
         heystack[ j ] = temp;
-
     }
 
     return heystack;
